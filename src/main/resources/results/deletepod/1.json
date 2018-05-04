@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "finalizers": [],
+    "resourceVersion": "8738850",
+    "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicaSet\",\"namespace\":\"default\",\"name\":\"nginx-deployment-5b4b59b4b8\",\"uid\":\"cafd2772-31a7-11e8-833b-00163e051e19\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"8738418\"}}\n"
+    },
+    "generateName": "nginx-deployment-5b4b59b4b8-",
+    "deletionTimestamp": "2018-03-27T10:20:55Z",
+    "labels": {
+      "app": "nginx",
+      "pod-template-hash": "1606156064"
+    },
+    "ownerReferences": [
+      {
+        "uid": "cafd2772-31a7-11e8-833b-00163e051e19",
+        "controller": true,
+        "apiVersion": "extensions/v1beta1",
+        "kind": "ReplicaSet",
+        "name": "nginx-deployment-5b4b59b4b8",
+        "additionalProperties": {
+          "blockOwnerDeletion": true
+        }
+      }
+    ],
+    "selfLink": "/api/v1/namespaces/default/pods/nginx-deployment-5b4b59b4b8-kqs2c",
+    "deletionGracePeriodSeconds": 30,
+    "uid": "caff2a57-31a7-11e8-833b-00163e051e19",
+    "creationTimestamp": "2018-03-27T10:15:36Z",
+    "name": "nginx-deployment-5b4b59b4b8-kqs2c",
+    "namespace": "default",
+    "additionalProperties": {}
+  },
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "additionalProperties": {},
+  "spec": {
+    "dnsPolicy": "ClusterFirst",
+    "nodeName": "izm5e5tgjv84bevngsmq19z",
+    "terminationGracePeriodSeconds": 30,
+    "serviceAccountName": "default",
+    "imagePullSecrets": [],
+    "volumes": [
+      {
+        "secret": {
+          "secretName": "default-token-kxbfh",
+          "defaultMode": 420,
+          "additionalProperties": {},
+          "items": []
+        },
+        "name": "default-token-kxbfh",
+        "additionalProperties": {}
+      }
+    ],
+    "serviceAccount": "default",
+    "securityContext": {
+      "supplementalGroups": [],
+      "additionalProperties": {}
+    },
+    "restartPolicy": "Always",
+    "containers": [
+      {
+        "image": "nginx:latest",
+        "imagePullPolicy": "Always",
+        "terminationMessagePath": "/dev/termination-log",
+        "resources": {
+          "additionalProperties": {}
+        },
+        "env": [],
+        "ports": [
+          {
+            "protocol": "TCP",
+            "containerPort": 80,
+            "additionalProperties": {}
+          }
+        ],
+        "command": [],
+        "volumeMounts": [
+          {
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+            "name": "default-token-kxbfh",
+            "readOnly": true,
+            "additionalProperties": {}
+          }
+        ],
+        "args": [],
+        "name": "nginx",
+        "additionalProperties": {
+          "terminationMessagePolicy": "File"
+        }
+      }
+    ],
+    "additionalProperties": {
+      "schedulerName": "default-scheduler",
+      "tolerations": [
+        {
+          "tolerationSeconds": 300,
+          "key": "node.alpha.kubernetes.io/notReady",
+          "operator": "Exists",
+          "effect": "NoExecute"
+        },
+        {
+          "tolerationSeconds": 300,
+          "key": "node.alpha.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "effect": "NoExecute"
+        }
+      ]
+    }
+  },
+  "status": {
+    "phase": "Running",
+    "podIP": "10.20.55.201",
+    "containerStatuses": [
+      {
+        "image": "nginx:latest",
+        "imageID": "docker-pullable://nginx@sha256:c4ee0ecb376636258447e1d8effb56c09c75fe7acf756bf7c13efadf38aa0aca",
+        "restartCount": 0,
+        "ready": true,
+        "name": "nginx",
+        "additionalProperties": {},
+        "state": {
+          "running": {
+            "startedAt": "2018-03-27T10:17:50Z",
+            "additionalProperties": {}
+          },
+          "additionalProperties": {}
+        },
+        "containerID": "docker://24e473a68eb04a4c0b14ee0b54027a0cec097d7ea5b48e6424d14010a6a658d8",
+        "lastState": {
+          "additionalProperties": {}
+        }
+      }
+    ],
+    "hostIP": "10.30.187.152",
+    "startTime": "2018-03-27T10:15:36Z",
+    "additionalProperties": {
+      "qosClass": "BestEffort"
+    },
+    "conditions": [
+      {
+        "additionalProperties": {},
+        "lastTransitionTime": "2018-03-27T10:15:36Z",
+        "type": "Initialized",
+        "status": "True"
+      },
+      {
+        "additionalProperties": {},
+        "lastTransitionTime": "2018-03-27T10:17:51Z",
+        "type": "Ready",
+        "status": "True"
+      },
+      {
+        "additionalProperties": {},
+        "lastTransitionTime": "2018-03-27T10:15:36Z",
+        "type": "PodScheduled",
+        "status": "True"
+      }
+    ]
+  }
+}

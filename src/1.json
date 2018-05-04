@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "finalizers": [],
+    "resourceVersion": "6183970",
+    "annotations": {
+      "kubernetes.io/created-by": "{\"kind\":\"SerializedReference\",\"apiVersion\":\"v1\",\"reference\":{\"kind\":\"ReplicaSet\",\"namespace\":\"default\",\"name\":\"nginx-deployment-5b4b59b4b8\",\"uid\":\"93d4076f-21ac-11e8-b65e-00163e051e19\",\"apiVersion\":\"extensions\",\"resourceVersion\":\"6183967\"}}\n"
+    },
+    "generateName": "nginx-deployment-5b4b59b4b8-",
+    "labels": {
+      "app": "nginx",
+      "pod-template-hash": "1606156064"
+    },
+    "ownerReferences": [
+      {
+        "uid": "93d4076f-21ac-11e8-b65e-00163e051e19",
+        "controller": true,
+        "apiVersion": "extensions/v1beta1",
+        "kind": "ReplicaSet",
+        "name": "nginx-deployment-5b4b59b4b8",
+        "additionalProperties": {
+          "blockOwnerDeletion": true
+        }
+      }
+    ],
+    "selfLink": "/api/v1/namespaces/default/pods/nginx-deployment-5b4b59b4b8-wxwzp",
+    "uid": "93d613b5-21ac-11e8-b65e-00163e051e19",
+    "creationTimestamp": "2018-03-07T02:09:33Z",
+    "name": "nginx-deployment-5b4b59b4b8-wxwzp",
+    "namespace": "default",
+    "additionalProperties": {}
+  },
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "additionalProperties": {},
+  "spec": {
+    "dnsPolicy": "ClusterFirst",
+    "terminationGracePeriodSeconds": 30,
+    "serviceAccountName": "default",
+    "imagePullSecrets": [],
+    "volumes": [
+      {
+        "secret": {
+          "secretName": "default-token-kxbfh",
+          "defaultMode": 420,
+          "additionalProperties": {},
+          "items": []
+        },
+        "name": "default-token-kxbfh",
+        "additionalProperties": {}
+      }
+    ],
+    "serviceAccount": "default",
+    "securityContext": {
+      "supplementalGroups": [],
+      "additionalProperties": {}
+    },
+    "restartPolicy": "Always",
+    "containers": [
+      {
+        "image": "nginx:latest",
+        "imagePullPolicy": "Always",
+        "terminationMessagePath": "/dev/termination-log",
+        "resources": {
+          "additionalProperties": {}
+        },
+        "env": [],
+        "ports": [
+          {
+            "protocol": "TCP",
+            "containerPort": 80,
+            "additionalProperties": {}
+          }
+        ],
+        "command": [],
+        "volumeMounts": [
+          {
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+            "name": "default-token-kxbfh",
+            "readOnly": true,
+            "additionalProperties": {}
+          }
+        ],
+        "args": [],
+        "name": "nginx",
+        "additionalProperties": {
+          "terminationMessagePolicy": "File"
+        }
+      }
+    ],
+    "additionalProperties": {
+      "schedulerName": "default-scheduler",
+      "tolerations": [
+        {
+          "tolerationSeconds": 300,
+          "key": "node.alpha.kubernetes.io/notReady",
+          "operator": "Exists",
+          "effect": "NoExecute"
+        },
+        {
+          "tolerationSeconds": 300,
+          "key": "node.alpha.kubernetes.io/unreachable",
+          "operator": "Exists",
+          "effect": "NoExecute"
+        }
+      ]
+    }
+  },
+  "status": {
+    "phase": "Pending",
+    "containerStatuses": [],
+    "additionalProperties": {
+      "qosClass": "BestEffort"
+    },
+    "conditions": []
+  }
+}
